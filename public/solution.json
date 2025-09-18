@@ -1,0 +1,2595 @@
+{
+  "nodes": [
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:0",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to create a new account, the operation is insertOne, The collection is always \"account\" and the documentToinsert will be the json required to create a new account. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 892000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Account",
+        "id": "06a0c428-7c00-4112-901e-3094a72c62fd",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:1",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to get serviceappointment details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all serviceappointment = {}. - If you want to get a serviceappointment with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use serviceappointment as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 921000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Serviceappointment",
+        "id": "177562e2-9305-40b1-adaf-e81f6dcfb595",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:2",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to update a single serviceappointment details, the collection value is always \"serviceappointment\". The filter is mongoDB filter query For example, - if you want to get all serviceappointment = {}. - If you want to get a serviceappointment with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use serviceappointment as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of serviceappointment with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 951000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Serviceappointment",
+        "id": "63705206-5c1a-4ea3-b8cb-6d2457508377",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:3",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to create a new serviceappointment, the operation is insertOne, The collection is always \"serviceappointment\" and the documentToinsert will be the json required to create a new serviceappointment. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 984000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Serviceappointment",
+        "id": "624d58e6-c43d-42ac-b2f5-0232cc5284d5",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:4",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to get plan details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all plan = {}. - If you want to get a plan with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use plan as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 10000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Plan",
+        "id": "2e99ee54-0dbc-4def-bd2e-0c9ff7379a0b",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:5",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to update a single plan details, the collection value is always \"plan\". The filter is mongoDB filter query For example, - if you want to get all plan = {}. - If you want to get a plan with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use plan as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of plan with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 40000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Plan",
+        "id": "f3034209-919c-40a6-9bda-31641d52b332",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:6",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to create a new plan, the operation is insertOne, The collection is always \"plan\" and the documentToinsert will be the json required to create a new plan. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 101000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Plan",
+        "id": "636622be-a85a-4c15-91c1-0c98f1176d93",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:7",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to get line details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all line = {}. - If you want to get a line with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use line as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 123000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Line",
+        "id": "dea58d2d-d77e-4334-814f-584478b38fad",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:8",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to update a single line details, the collection value is always \"line\". The filter is mongoDB filter query For example, - if you want to get all line = {}. - If you want to get a line with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use line as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of line with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 145000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Line",
+        "id": "250a987c-9d05-4f7d-87be-595963e579ae",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:9",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to create a new line, the operation is insertOne, The collection is always \"line\" and the documentToinsert will be the json required to create a new line. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 166000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Line",
+        "id": "a232f5cb-08bd-4d39-b759-51b8414eb903",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:10",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to get contract details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all contract = {}. - If you want to get a contract with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use contract as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 189000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Contract",
+        "id": "02d02704-f3cc-4f6c-8614-838ab2580233",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:11",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to update a single contract details, the collection value is always \"contract\". The filter is mongoDB filter query For example, - if you want to get all contract = {}. - If you want to get a contract with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use contract as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of contract with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 214000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Contract",
+        "id": "1005296d-264b-4019-a4e2-4b3c1a59095e",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:12",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to create a new contract, the operation is insertOne, The collection is always \"contract\" and the documentToinsert will be the json required to create a new contract. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 238000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Contract",
+        "id": "5af06ef4-a1ce-426b-acfb-387b45e739e8",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:13",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to get device details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all device = {}. - If you want to get a device with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use device as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 259000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Device",
+        "id": "e3e7610d-452d-4a8b-b764-1b3449a82f6c",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:14",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to update a single device details, the collection value is always \"device\". The filter is mongoDB filter query For example, - if you want to get all device = {}. - If you want to get a device with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use device as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of device with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 285000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Device",
+        "id": "67305016-f300-4beb-afbc-d2d71ffc1cbe",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:15",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to create a new device, the operation is insertOne, The collection is always \"device\" and the documentToinsert will be the json required to create a new device. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 307000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Device",
+        "id": "1e6f10b1-337c-46d4-97f8-5dfa4a0333f3",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:16",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to get bill details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all bill = {}. - If you want to get a bill with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use bill as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 335000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Bill",
+        "id": "3e6e0d34-f618-4ccf-917b-b9c955fe3853",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:17",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to update a single bill details, the collection value is always \"bill\". The filter is mongoDB filter query For example, - if you want to get all bill = {}. - If you want to get a bill with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use bill as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of bill with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 365000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Bill",
+        "id": "1561024b-1e61-4acc-aed9-415c8a1d9051",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:18",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to create a new bill, the operation is insertOne, The collection is always \"bill\" and the documentToinsert will be the json required to create a new bill. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 403000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Bill",
+        "id": "0bee6a8f-74fd-44af-9bdd-9016a2175689",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:19",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to get order details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all order = {}. - If you want to get a order with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use order as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 453000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Order",
+        "id": "ee0e26d8-759a-4f23-bacc-eb06afdec7ac",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:20",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to update a single order details, the collection value is always \"order\". The filter is mongoDB filter query For example, - if you want to get all order = {}. - If you want to get a order with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use order as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of order with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 486000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Order",
+        "id": "090eaaa0-6da2-4ca8-ae3b-46f6e236efe9",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:21",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to create a new order, the operation is insertOne, The collection is always \"order\" and the documentToinsert will be the json required to create a new order. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 589000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Order",
+        "id": "95b6c46a-2c40-49e9-a5d4-9c29b9a0ed19",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:22",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to get ticket details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all ticket = {}. - If you want to get a ticket with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use ticket as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 626000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Ticket",
+        "id": "6979de44-b3ee-4916-a2a9-c53d6abdeaef",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:23",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to update a single ticket details, the collection value is always \"ticket\". The filter is mongoDB filter query For example, - if you want to get all ticket = {}. - If you want to get a ticket with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use ticket as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of ticket with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 663000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Ticket",
+        "id": "7bc507b5-0ac7-4314-819b-6a60aa0949fe",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:24",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to create a new ticket, the operation is insertOne, The collection is always \"ticket\" and the documentToinsert will be the json required to create a new ticket. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 694000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Ticket",
+        "id": "8983afeb-6983-4378-b5c9-1acd908d9b3c",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:25",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to get reward details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all reward = {}. - If you want to get a reward with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use reward as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 722000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Reward",
+        "id": "85d4ee4e-d96a-4339-8822-fdd36fcf01e6",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:26",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to update a single reward details, the collection value is always \"reward\". The filter is mongoDB filter query For example, - if you want to get all reward = {}. - If you want to get a reward with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use reward as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of reward with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 754000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Reward",
+        "id": "9ac2f049-fac3-4e85-b897-8da05c8b6213",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:27",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:53",
+        "description": "This tool is used to create a new reward, the operation is insertOne, The collection is always \"reward\" and the documentToinsert will be the json required to create a new reward. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 53,
+          "nanosecond": 785000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Reward",
+        "id": "d48e1b6c-d05f-42ba-8f5e-771c2000893c",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:28",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to update a single account details, the collection value is always \"account\". The filter is mongoDB filter query For example, - if you want to get all account = {}. - If you want to get a account with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use account as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of account with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 865000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Account",
+        "id": "303a24d9-3a21-4bc5-bbb7-2223d675fd64",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:29",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to get account details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all account = {}. - If you want to get a account with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use account as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 835000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Account",
+        "id": "4f006a6e-ce25-47c1-8791-91e9c71d7c78",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:30",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to get customer details, the operation is find and the filter is a mongoDB filter query. For example, - if you want to get all customer = {}. - If you want to get a customer with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use customer as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id. Use Regex Ignorecase while filtering to make the search case insensitive.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 607000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Get Customer",
+        "id": "b9a7f7c9-98d0-4be1-835c-c54339506c3d",
+        "variable_mapping": "{\"operation\": \"get\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:31",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to update a single customer details, the collection value is always \"customer\". The filter is mongoDB filter query For example, - if you want to get all customer = {}. - If you want to get a customer with account_number 12345, the input should {\"account_number\": \"12345\"}. Always use customer as collection for this request. Make sure to follow the strict rules mentioned above. the filter should be a valid json string in string format. Use _id to lookup based on account_id and the updateQuery is mongoDB updateOne query. For example, if you want to update the first and last name of customer with number C0001, the filter should be {\"customer_number\": \"C0001\" },{\"$set\": {\"name.first\": \"John\",\"name.last\": \"Carter\" }}. For an updateOne operation, the filter has two parts record selector: { \"customer_number\": \"C0001\" } and fields to update: { \"$set\": { \"name.first\": \"John\", \"name.last\": \"Carter\" } }. The input would look like: {\"filter\": {\"customer_number\": \"C0001\"}, {\"$set\": {\"name.first\": \"John\", \"name.last\": \"Carter\"}}, \"operation\": \"updateOne\"} Make sure to follow the strict rules mentioned above. the query should be a valid json string in string format.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 753000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Update Customer",
+        "id": "55e65bc1-e74c-40d9-b6dd-42167d43b16c",
+        "variable_mapping": "{\"operation\": \"update\", \"filter\": \"{}\", \"update\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:32",
+      "label": "DataSourceTool",
+      "properties": {
+        "datasource_id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "deployed_at": "2025-09-11 07:54:52",
+        "description": "This tool is used to create a new customer, the operation is insertOne, The collection is always \"customer\" and the documentToinsert will be the json required to create a new customer. example: {\"account_id\": \"a1\", \"type\": \"WITHDRAWAL\", \"amount\": -200}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 52,
+          "nanosecond": 799000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "output_control": "",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "output_message": "",
+        "input_control": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Create Customer",
+        "id": "20a12f3e-983b-4e24-87cd-677f4ab7e5d8",
+        "variable_mapping": "{\"operation\": \"create\", \"filter\": \"{}\"}"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:33",
+      "label": "Enterprise",
+      "properties": {
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 44,
+          "second": 32,
+          "nanosecond": 351000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        }
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "label": "Solution",
+      "properties": {
+        "goal": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "MobileTelco - v2",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 44,
+          "second": 33,
+          "nanosecond": 161000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Automates customer interactions for a mobile telco contact center, including new customer signups, line management, add-on plan management, base plan changes, technician scheduling, and service status inquiries.",
+        "id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "version": "1.0.0",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:35",
+      "label": "Goal",
+      "properties": {
+        "is_active": true,
+        "display_order": 1,
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 44,
+          "second": 47,
+          "nanosecond": 256000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Create a streamlined process for new customer signups, including capturing necessary customer details, creating accounts, assigning base plans, and handling device selections. Ensure all new accounts are linked to appropriate plan types and follow a structured flow for data collection and account creation.",
+        "id": "ac84ac71-9d85-4f76-b91d-2ac3285da230",
+        "title": "Develop a New Customer Signup Process",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:36",
+      "label": "Goal",
+      "properties": {
+        "is_active": true,
+        "display_order": 2,
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 44,
+          "second": 47,
+          "nanosecond": 378000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Implement a robust process for adding new lines to existing accounts, ensuring proper authentication and verification of customer details. Facilitate device selection for new lines and maintain accurate records of line associations with accounts.",
+        "id": "db65e679-8c55-41e8-a65d-e983d78e2af2",
+        "title": "Enhance Line Management for Existing Accounts",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:37",
+      "label": "Goal",
+      "properties": {
+        "is_active": true,
+        "display_order": 3,
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 44,
+          "second": 47,
+          "nanosecond": 395000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Develop a process for customers to explore and select ADD-ON plans, with the ability to set activation and expiration dates based on customer preferences. Ensure the system supports both activation and deactivation of ADD-ON plans with precise date management.",
+        "id": "a69e4040-baa0-48d1-998c-c953113040e9",
+        "title": "Implement Add-On Plan Management",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:38",
+      "label": "Goal",
+      "properties": {
+        "is_active": true,
+        "display_order": 4,
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 44,
+          "second": 47,
+          "nanosecond": 403000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Create an order management system to handle base plan changes, capturing these requests as orders to be processed at the start of the next billing cycle. Ensure clear communication with customers regarding the timing of plan changes.",
+        "id": "a695cb9f-2225-476c-8118-e8b094b6c2b0",
+        "title": "Streamline Base Plan Change Requests",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:39",
+      "label": "Goal",
+      "properties": {
+        "is_active": true,
+        "display_order": 5,
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 44,
+          "second": 47,
+          "nanosecond": 411000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Develop a system for scheduling technician visits, capturing relevant appointment details, and providing customers with reference numbers. Ensure the system supports input-based scheduling and maintains an open status until the appointment is completed.",
+        "id": "aa1384f9-4edc-464e-9e9d-6697e06530ea",
+        "title": "Establish a Technician Visit Scheduling System",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:40",
+      "label": "Goal",
+      "properties": {
+        "is_active": true,
+        "display_order": 6,
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 44,
+          "second": 47,
+          "nanosecond": 419000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Implement a feature to provide customers with real-time service status updates, including integration with mapping services to display service locations. Ensure the feature is user-friendly and provides clear information about service status.",
+        "id": "761c344f-94c1-4ba2-ae87-b029dd02c4e5",
+        "title": "Design a Service Status Inquiry Feature",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:41",
+      "label": "AgentDefinition",
+      "properties": {
+        "instructions": "['Capture all necessary customer details during interactions.', 'Ensure all plan and line changes are processed according to policy.', 'Provide customers with clear information about their service status and options.', 'Log all interactions with timestamps and relevant details.']",
+        "audience": "end users, contact center agents",
+        "role": "contact_center_facilitator",
+        "agent_name": "contact_center_agent",
+        "tone": "professional",
+        "conversation_settings": "{}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 54,
+          "nanosecond": 752000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "system_prompt": "You are an AI agent for a mobile telco contact center. Your tasks include assisting with new customer signups, managing lines and plans for existing accounts, scheduling technician visits, and providing service status updates. Ensure all interactions are logged and processed according to company policy.",
+        "constraints": "['Ensure all customer interactions are logged with appropriate details.', 'Follow company policy for plan changes and device allocations.', 'Maintain data integrity and privacy in all operations.', 'Provide clear and concise communication to customers.']",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "purpose_summary": "Facilitate customer interactions and automate processes within the mobile telco contact center.",
+        "responsibility": "Handle new customer signups, manage existing accounts, process add-on and base plan changes, schedule technician visits, and provide service status updates.",
+        "domain": "telecom",
+        "recommended_model": "gpt-4o",
+        "id": "e5960db7-8f93-4190-b432-1b5523d6624d",
+        "recommended_provider": "openai",
+        "reasoning_strategy": "customer-first"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:42",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "customer",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 0,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"customer_id\", \"customer_type\", \"name\", \"national_id\", \"contact_email\", \"created_at\", \"updated_at\"], \"properties\": {\"name\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"customer_id\": {\"bsonType\": \"string\"}, \"national_id\": {\"bsonType\": \"string\"}, \"contact_email\": {\"pattern\": \"^[^@\\\\s]+@[^@\\\\s]+\\\\.[^@\\\\s]+$\", \"bsonType\": \"string\"}, \"customer_type\": {\"enum\": [\"INDIVIDUAL\", \"CORPORATE\"], \"bsonType\": \"string\"}}, \"additionalProperties\": false}, \"primaryKey\": \"customer_id\", \"description\": \"Represents an individual or corporate customer of the telco.\"}",
+        "description": "Represents an individual or corporate customer of the telco.",
+        "id": "1cfdc421-704b-4fc8-959b-cb9a8027ea81",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "account",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 79000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"account_id\", \"customer_id\", \"base_plan_id\", \"status\", \"created_at\", \"updated_at\"], \"properties\": {\"status\": {\"enum\": [\"ACTIVE\", \"CLOSED\", \"SUSPENDED\"], \"bsonType\": \"string\"}, \"account_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"customer_id\": {\"bsonType\": \"string\"}, \"base_plan_id\": {\"bsonType\": \"string\"}}, \"additionalProperties\": false}, \"primaryKey\": \"account_id\", \"description\": \"A billable account owned by a customer and associated with lines, plans, and contracts.\"}",
+        "description": "A billable account owned by a customer and associated with lines, plans, and contracts.",
+        "id": "05f114df-bc08-497b-9e4a-5509029d9d1e",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:44",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "serviceappointment",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 122000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Represents a scheduled technician visit for an account.",
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"appointment_id\", \"account_id\", \"appointment_description\", \"appointment_datetime\", \"appointment_status\", \"created_at\", \"updated_at\"], \"properties\": {\"account_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"appointment_id\": {\"bsonType\": \"string\"}, \"appointment_status\": {\"enum\": [\"OPEN\", \"COMPLETED\"], \"bsonType\": \"string\"}, \"appointment_datetime\": {\"bsonType\": \"date\"}, \"appointment_description\": {\"bsonType\": \"string\"}}, \"additionalProperties\": false}, \"primaryKey\": \"appointment_id\", \"description\": \"Represents a scheduled technician visit for an account.\"}",
+        "id": "d594ab29-c78e-401d-8832-eb5f7e7f22d7",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:45",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "plan",
+        "description": "Represents a telecom service plan, base or add-on, specifying charges and included services.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 199000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"plan_id\", \"plan_name\", \"plan_description\", \"plan_type\", \"monthly_fee\", \"service_included\", \"created_at\", \"updated_at\"], \"properties\": {\"plan_id\": {\"bsonType\": \"string\"}, \"plan_name\": {\"bsonType\": \"string\"}, \"plan_type\": {\"enum\": [\"BASE\", \"ADDON\"], \"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"monthly_fee\": {\"minimum\": 0, \"bsonType\": [\"double\", \"int\", \"long\", \"decimal\"]}, \"usage_charges\": {\"minimum\": 0, \"bsonType\": [\"double\", \"int\", \"long\", \"decimal\", \"null\"]}, \"base_plan_type\": {\"enum\": [\"SINGLE_LINE\", \"FAMILY\", null], \"bsonType\": [\"string\", \"null\"]}, \"plan_description\": {\"bsonType\": \"string\"}, \"service_included\": {\"items\": {\"bsonType\": \"object\", \"required\": [\"service_type\", \"unit\"], \"properties\": {\"unit\": {\"enum\": [\"MINUTES\", \"MESSAGES\", \"GB\", \"UNIT\"], \"bsonType\": \"string\"}, \"overage_rate\": {\"minimum\": 0, \"bsonType\": [\"double\", \"int\", \"long\", \"decimal\", \"null\"]}, \"service_type\": {\"enum\": [\"VOICE_NATIONAL\", \"VOICE_INTL\", \"SMS_NATIONAL\", \"SMS_INTL\", \"DATA\", \"VALUE_ADDED\"], \"bsonType\": \"string\"}, \"included_amount\": {\"minimum\": 0, \"bsonType\": [\"double\", \"int\", \"long\", \"decimal\", \"null\"]}}, \"additionalProperties\": false}, \"bsonType\": \"array\"}}, \"additionalProperties\": false}, \"primaryKey\": \"plan_id\", \"description\": \"Represents a telecom service plan, base or add-on, specifying charges and included services.\"}",
+        "id": "173ef445-17fa-4375-a6f6-f48a4621dbb7",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:46",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "line",
+        "description": "A mobile connection associated with an account, identified by phone number and optionally linked to a device.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 284000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"line_id\", \"account_id\", \"phone_number_MSISDN\", \"status\", \"created_at\", \"updated_at\"], \"properties\": {\"status\": {\"enum\": [\"ACTIVE\", \"SUSPENDED\", \"DEACTIVATED\"], \"bsonType\": \"string\"}, \"line_id\": {\"bsonType\": \"string\"}, \"device_id\": {\"pattern\": \"^[0-9]{15}$\", \"bsonType\": [\"string\", \"null\"]}, \"sim_iccid\": {\"pattern\": \"^[0-9]{20}$\", \"bsonType\": [\"string\", \"null\"]}, \"account_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"assigned_device_id\": {\"bsonType\": [\"string\", \"null\"]}, \"phone_number_MSISDN\": {\"pattern\": \"^[0-9]{10}$\", \"bsonType\": \"string\"}, \"eligible_for_device_upgrade\": {\"bsonType\": [\"bool\", \"null\"]}}, \"additionalProperties\": false}, \"primaryKey\": \"line_id\", \"description\": \"A mobile connection associated with an account, identified by phone number and optionally linked to a device.\"}",
+        "id": "c60b5460-3453-4239-8f5e-f8d67369d6f7",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:47",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "contract",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 314000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"contract_id\", \"account_id\", \"start_date\", \"end_date\", \"early_termination_fee_per_month\", \"created_at\", \"updated_at\"], \"properties\": {\"end_date\": {\"bsonType\": \"date\"}, \"account_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"start_date\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"contract_id\": {\"bsonType\": \"string\"}, \"early_termination_fee_per_month\": {\"minimum\": 0, \"bsonType\": \"double\"}}, \"additionalProperties\": false}, \"primaryKey\": \"contract_id\", \"description\": \"A legal agreement between a customer and the telco, associated with an account.\"}",
+        "description": "A legal agreement between a customer and the telco, associated with an account.",
+        "id": "778cf6b4-5dfc-45b6-b043-644f485bcf60",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:48",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "device",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 321000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"device_id\", \"price\", \"status\", \"created_at\", \"updated_at\"], \"properties\": {\"price\": {\"minimum\": 0, \"bsonType\": \"double\"}, \"status\": {\"enum\": [\"AVAILABLE\", \"SOLD\"], \"bsonType\": \"string\"}, \"device_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}}, \"additionalProperties\": false}, \"primaryKey\": \"device_id\", \"description\": \"Represents a mobile device available for purchase or rent by customers.\"}",
+        "description": "Represents a mobile device available for purchase or rent by customers.",
+        "id": "daa5791d-fc69-49be-afff-645eb2ab1f09",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:49",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "bill",
+        "description": "A periodic bill generated for an account, detailing charges for services and plans.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 328000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"bill_id\", \"account_id\", \"billing_period_start\", \"billing_period_end\", \"total_amount\", \"created_at\", \"updated_at\"], \"properties\": {\"bill_id\": {\"bsonType\": \"string\"}, \"account_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"total_amount\": {\"minimum\": 0, \"bsonType\": \"double\"}, \"billing_period_end\": {\"bsonType\": \"date\"}, \"billing_period_start\": {\"bsonType\": \"date\"}}, \"additionalProperties\": false}, \"primaryKey\": \"bill_id\", \"description\": \"A periodic bill generated for an account, detailing charges for services and plans.\"}",
+        "id": "171483c1-8d84-497f-8fd8-da26eaf98393",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:50",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "order",
+        "description": "Represents a customer order for devices or plan changes.",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 332000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"order_id\", \"account_id\", \"order_type\", \"order_status\", \"details\", \"created_at\", \"updated_at\"], \"properties\": {\"details\": {\"bsonType\": \"string\"}, \"order_id\": {\"bsonType\": \"string\"}, \"account_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"order_type\": {\"enum\": [\"DEVICE_PURCHASE\", \"BASE_PLAN_CHANGE\"], \"bsonType\": \"string\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"order_status\": {\"enum\": [\"OPEN\", \"CLOSED\"], \"bsonType\": \"string\"}}, \"additionalProperties\": false}, \"primaryKey\": \"order_id\", \"description\": \"Represents a customer order for devices or plan changes.\"}",
+        "id": "70d6e361-2296-4896-ae2d-c5aa5cd5362c",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:51",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "ticket",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 336000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"ticket_id\", \"account_id\", \"ticket_type\", \"created_at\", \"updated_at\"], \"properties\": {\"line_id\": {\"bsonType\": [\"string\", \"null\"]}, \"ticket_id\": {\"bsonType\": \"string\"}, \"account_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"ticket_type\": {\"enum\": [\"service\", \"billing\"], \"bsonType\": \"string\"}}, \"additionalProperties\": false}, \"primaryKey\": \"ticket_id\", \"description\": \"A record of a customer complaint or issue, associated with an account.\"}",
+        "description": "A record of a customer complaint or issue, associated with an account.",
+        "id": "ca691c10-f27a-4ffd-bff9-1191f5a800d9",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:52",
+      "label": "SolutionCollection",
+      "properties": {
+        "name": "reward",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 49,
+          "second": 55,
+          "nanosecond": 340000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "collection_definition": "{\"schema\": {\"bsonType\": \"object\", \"required\": [\"reward_id\", \"account_id\", \"reward_type\", \"valid_from\", \"valid_until\", \"created_at\", \"updated_at\"], \"properties\": {\"reward_id\": {\"bsonType\": \"string\"}, \"account_id\": {\"bsonType\": \"string\"}, \"created_at\": {\"bsonType\": \"date\"}, \"updated_at\": {\"bsonType\": \"date\"}, \"valid_from\": {\"bsonType\": \"date\"}, \"reward_type\": {\"bsonType\": \"string\"}, \"valid_until\": {\"bsonType\": \"date\"}}, \"additionalProperties\": false}, \"primaryKey\": \"reward_id\", \"description\": \"Represents a reward or perk associated with an account.\"}",
+        "description": "Represents a reward or perk associated with an account.",
+        "id": "f88524c9-ddce-42ea-a54f-6c84f11be21b",
+        "collection_type": "general",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "label": "Agent",
+      "properties": {
+        "instructions": "[\"Capture all necessary customer details during interactions.\", \"Ensure all plan and line changes are processed according to policy.\", \"Provide customers with clear information about their service status and options.\", \"Log all interactions with timestamps and relevant details.\"]",
+        "audience": "end users, contact center agents",
+        "role": "contact_center_facilitator",
+        "agent_name": "contact_center_agent",
+        "tone": "professional",
+        "deployed_at": "2025-09-11 07:54:50",
+        "conversation_settings": "{}",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 50,
+          "nanosecond": 823000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "system_prompt": "You are an AI agent for a mobile telco contact center. Your tasks include assisting with new customer signups, managing lines and plans for existing accounts, scheduling technician visits, and providing service status updates. Ensure all interactions are logged and processed according to company policy.",
+        "constraints": "[\"Ensure all customer interactions are logged with appropriate details.\", \"Follow company policy for plan changes and device allocations.\", \"Maintain data integrity and privacy in all operations.\", \"Provide clear and concise communication to customers.\"]",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe",
+        "agent_definition_id": "e5960db7-8f93-4190-b432-1b5523d6624d",
+        "purpose_summary": "Facilitate customer interactions and automate processes within the mobile telco contact center.",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "responsibility": "Handle new customer signups, manage existing accounts, process add-on and base plan changes, schedule technician visits, and provide service status updates.",
+        "domain": "telecom",
+        "recommended_model": "gpt-4o",
+        "id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "recommended_provider": "OPENAI",
+        "reasoning_strategy": "customer-first"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:54",
+      "label": "DatasourceConnection",
+      "properties": {
+        "headers": "{\"Content-Type\": \"application/json\"}",
+        "auth_type": "NO_AUTH",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "base_url": "http://13.222.214.3:8056",
+        "name": "contact_center_agent Connection - 20250911_075451",
+        "created_at": "2025-09-11 07:54:51",
+        "id": "5e0dafd9-22df-4b15-8ab9-1a987ab86c54",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "label": "DataSource",
+      "properties": {
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "connection_id": "5e0dafd9-22df-4b15-8ab9-1a987ab86c54",
+        "deployed_at": "2025-09-11 07:54:51",
+        "name": "contact_center_agent_2733 - Get Data",
+        "request_path": "/api/v1/mongo/execute",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 51,
+          "nanosecond": 305000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "id": "5cbacf4a-659d-4c65-a877-8b2640c45470",
+        "request_method": "POST",
+        "operation": "find",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "label": "DataSource",
+      "properties": {
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "connection_id": "5e0dafd9-22df-4b15-8ab9-1a987ab86c54",
+        "deployed_at": "2025-09-11 07:54:51",
+        "name": "contact_center_agent_2733 - Create Data",
+        "request_path": "/api/v1/mongo/execute",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 51,
+          "nanosecond": 420000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "id": "8f0c0643-35b4-4a8e-a191-ea8b247f7c5f",
+        "request_method": "POST",
+        "operation": "insertOne",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "label": "DataSource",
+      "properties": {
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "agent_id": "66262b53-0986-4e6d-8d61-b52713f1ae7f",
+        "connection_id": "5e0dafd9-22df-4b15-8ab9-1a987ab86c54",
+        "deployed_at": "2025-09-11 07:54:51",
+        "name": "contact_center_agent_2733 - Update Data",
+        "request_path": "/api/v1/mongo/execute",
+        "created_at": {
+          "year": 2025,
+          "month": 9,
+          "day": 11,
+          "hour": 7,
+          "minute": 54,
+          "second": 51,
+          "nanosecond": 443000000,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "deployment_status": "DEPLOYED",
+        "id": "da9db6e6-ba64-4d38-8c3e-70b6a3cbc64b",
+        "request_method": "POST",
+        "operation": "updateOne",
+        "solution_id": "50ad4e7c-8468-4f88-8414-2f13bb1551fe"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:100",
+      "label": "Solution",
+      "properties": {
+        "goal": "",
+        "account_id": "908c91b3-d940-45f4-bdb4-719b025fce91",
+        "name": "Customer Retention Initiative",
+        "created_at": {
+          "year": 2025,
+          "month": 10,
+          "day": 1,
+          "hour": 10,
+          "minute": 0,
+          "second": 0,
+          "nanosecond": 0,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "A set of features and tools designed to improve customer loyalty and reduce churn.",
+        "id": "a8b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d",
+        "version": "1.0.0",
+        "status": "DRAFT"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:101",
+      "label": "Goal",
+      "properties": {
+        "is_active": true,
+        "display_order": 1,
+        "created_at": {
+          "year": 2025,
+          "month": 10,
+          "day": 1,
+          "hour": 10,
+          "minute": 1,
+          "second": 0,
+          "nanosecond": 0,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Analyze customer data to identify at-risk customers and proactively offer retention incentives.",
+        "id": "b1c2d3e4-f5a6-b7c8-d9e0-f1a2b3c4d5e6",
+        "title": "Reduce Customer Churn",
+        "solution_id": "a8b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d"
+      }
+    },
+    {
+      "id": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:102",
+      "label": "Goal",
+      "properties": {
+        "is_active": true,
+        "display_order": 2,
+        "created_at": {
+          "year": 2025,
+          "month": 10,
+          "day": 1,
+          "hour": 10,
+          "minute": 2,
+          "second": 0,
+          "nanosecond": 0,
+          "timeZoneOffsetSeconds": 0,
+          "timeZoneId": "UTC"
+        },
+        "description": "Enhance the existing loyalty program with new rewards and personalized offers.",
+        "id": "c2d3e4f5-a6b7-c8d9-e0f1-a2b3c4d5e6f7",
+        "title": "Improve Loyalty Program",
+        "solution_id": "a8b1c2d3-e4f5-6a7b-8c9d-0e1f2a3b4c5d"
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:27",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:33",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "OWNS_SOLUTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:35",
+      "type": "HAS_GOAL",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:36",
+      "type": "HAS_GOAL",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:37",
+      "type": "HAS_GOAL",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:38",
+      "type": "HAS_GOAL",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:39",
+      "type": "HAS_GOAL",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:40",
+      "type": "HAS_GOAL",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:41",
+      "type": "HAS_AGENT_DEFINITION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:42",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:44",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:45",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:46",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:47",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:48",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:49",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:50",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:51",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:52",
+      "type": "HAS_COLLECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:42",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "CustomerToAccount",
+        "notes": "",
+        "optional": false,
+        "foreign_keys": "{}",
+        "cardinality": "1:M"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:45",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "AccountToPlan",
+        "notes": "",
+        "optional": false,
+        "foreign_keys": "{}",
+        "cardinality": "1:1"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:46",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "AccountToLine",
+        "notes": "",
+        "optional": false,
+        "foreign_keys": "{}",
+        "cardinality": "1:M"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:47",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "AccountToContract",
+        "notes": "",
+        "optional": false,
+        "foreign_keys": "{}",
+        "cardinality": "1:1"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:46",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:48",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "LineToDevice",
+        "notes": "",
+        "optional": true,
+        "foreign_keys": "{}",
+        "cardinality": "0..1:1"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:49",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "AccountToBill",
+        "notes": "",
+        "optional": false,
+        "foreign_keys": "{}",
+        "cardinality": "1:M"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:50",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "AccountToOrder",
+        "notes": "",
+        "optional": false,
+        "foreign_keys": "{}",
+        "cardinality": "1:M"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:51",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "AccountToTicket",
+        "notes": "",
+        "optional": false,
+        "foreign_keys": "{}",
+        "cardinality": "1:M"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:52",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "AccountToReward",
+        "notes": "",
+        "optional": true,
+        "foreign_keys": "{}",
+        "cardinality": "1:M"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:43",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:44",
+      "type": "COLLECTION_RELATIONSHIP",
+      "properties": {
+        "relationship_name": "AccountToServiceAppointment",
+        "notes": "",
+        "optional": false,
+        "foreign_keys": "{}",
+        "cardinality": "1:M"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:41",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "DEPLOYED_AS",
+      "properties": {
+        "deployment_status": "ACTIVE"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:54",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {
+        "created_at": "2025-09-11 07:54:51"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {
+        "operation": "find"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:54",
+      "type": "USES_CONNECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {
+        "operation": "insertOne"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:54",
+      "type": "USES_CONNECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {
+        "operation": "updateOne"
+      }
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:54",
+      "type": "USES_CONNECTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:30",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:30",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:30",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:31",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:31",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:31",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:32",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:32",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:32",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:29",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:29",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:29",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:28",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:28",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:28",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:0",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:0",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:0",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:1",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:1",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:1",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:2",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:2",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:2",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:3",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:3",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:3",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:4",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:4",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:4",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:5",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:5",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:5",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:6",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:6",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:6",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:7",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:7",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:7",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:8",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:8",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:8",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:9",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:9",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:9",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:10",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:10",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:10",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:11",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:11",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:11",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:12",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:12",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:12",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:13",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:13",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:13",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:14",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:14",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:14",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:15",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:15",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:15",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:16",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:16",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:16",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:17",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:17",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:17",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:18",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:18",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:18",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:19",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:19",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:19",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:20",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:20",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:20",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:21",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:21",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:21",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:22",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:22",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:22",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:23",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:23",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:23",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:24",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:24",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:24",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:25",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:25",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:55",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:25",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:26",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:26",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:57",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:26",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:34",
+      "type": "DEPLOYED_IN",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:27",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:53",
+      "type": "USED_BY",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:27",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:56",
+      "type": "USES_DATASOURCE",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:33",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:100",
+      "type": "OWNS_SOLUTION",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:100",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:101",
+      "type": "HAS_GOAL",
+      "properties": {}
+    },
+    {
+      "source": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:100",
+      "target": "4:e15e5133-2596-4d0a-9168-22e9447e80cb:102",
+      "type": "HAS_GOAL",
+      "properties": {}
+    }
+  ]
+}

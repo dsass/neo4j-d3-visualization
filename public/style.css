@@ -1,0 +1,345 @@
+/* public/style.css */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 2rem;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+#graph-container {
+    width: 90vw;
+    height: 80vh;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: auto;
+    position: relative; /* Needed for positioning the search bar */
+    background-color: #f0f0f0; /* Light grey background for the whole container */
+}
+
+.node {
+    stroke: #E9E9E9;
+    stroke-width: 1.5px;
+}
+
+.node.enterprise-node {
+    stroke: #BBBBBB; /* A slightly darker default outline for the enterprise node */
+}
+
+.node.hovered {
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.node.selected {
+    stroke: #777; /* A medium-dark stroke for selection */
+    stroke-width: 2px; /* Same as hover */
+}
+
+.link {
+    stroke: #999;
+    stroke-opacity: 0.6;
+    stroke-width: 1.5px;
+    fill: none; /* Important for path elements that shouldn't be filled */
+}
+
+.link-clickable {
+    stroke: transparent;
+    stroke-width: 10px; /* Wider click area */
+    fill: none;
+    cursor: pointer;
+}
+
+.node-label {
+    pointer-events: none;
+    font-size: 8px;
+    font-family: sans-serif;
+}
+
+.link-label {
+    font-size: 8px;
+    font-family: sans-serif;
+    fill: #555;
+    text-anchor: middle; /* Center the text on the path */
+    pointer-events: none;
+}
+
+.node-title-label { /* Node Title – top of node */
+    font-size: 8px;
+    font-weight: normal;
+    fill: #fff;
+    text-anchor: start; /* Align to the left */
+    pointer-events: none;
+}
+
+.node-separator {
+    stroke: rgba(255, 255, 255, 0.5);
+    stroke-width: 0.5px;
+}
+
+.node-name-label {  /* Node Name – center of node */
+    font-size: 10px;
+    font-weight: bold;
+    fill: #000;
+    text-anchor: middle; /* Center the text */
+    pointer-events: none;
+}
+
+.node-title-label.summary-title-label {
+    font-weight: bold; /* Emphasize the title on summary nodes */
+}
+
+.node-name-label.summary-label {
+    fill: #fff;
+    font-weight: normal; /* De-emphasize the count on summary nodes */
+}
+
+.expand-icon {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+.contract-icon {
+    cursor: pointer;
+    pointer-events: all;
+}
+
+/* --- Search Bar Styles --- */
+.search-container {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#search-input {
+    padding: 8px 12px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    font-size: 14px;
+}
+
+/* --- Info Panel Styles --- */
+#info-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 220px; /* Must match panelWidth in JS */
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    overflow-y: auto;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-panel-icon {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#info-panel h3 {
+    margin-top: 0;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.summary-count {
+    font-size: 13px;
+    color: #666;
+    margin: -10px 0 15px 0;
+}
+
+.color-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Custom checkbox behavior for dots in the control panel */
+.collapse-control .color-dot {
+    background-color: #fff;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.property {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+.property-key {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.property-value-container {
+    font-size: 12px;
+    color: #333;
+}
+
+.property-value-container pre {
+    background-color: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.property-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.relationship-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.relationship-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.rel-arrow {
+    margin-right: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+.relationships-container {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.relationships-container h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.contained-nodes-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    font-size: 12px;
+    overflow-y: auto;
+    flex-grow: 1; /* Allow the list to fill remaining vertical space */
+}
+.contained-nodes-list li {
+    padding: 4px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+.contained-nodes-list li:hover {
+    background-color: #f5f5f5;
+}
+/* --- Zoom Controls --- */
+.zoom-controls {
+    position: absolute;
+    bottom: 15px;
+    right: 240px; /* Position next to the info panel */
+    display: flex;
+    flex-direction: column;
+}
+
+.zoom-controls button {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    line-height: 1;
+    padding: 0;
+}
+
+/* --- Collapse Controls Container --- */
+.collapse-controls-container {
+    position: absolute;
+    top: 15px;
+    right: 240px; /* Position next to info panel */
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.collapse-controls-container h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.solution-control-group h5 {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.collapse-control {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+.collapse-control label {
+    cursor: pointer;
+}
+
+/* Hide the default checkbox */
+.collapse-control input[type="checkbox"] {
+    display: none;
+}
+
+/* Fill the dot when the hidden checkbox is checked */
+.collapse-control input[type="checkbox"]:checked + label .color-dot {
+    background-color: currentColor;
+}
+
+/* --- Hierarchy Control (Commented Out) --- */
+/* .hierarchy-control {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+} */
+
+/* .hierarchy-control button {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+} */

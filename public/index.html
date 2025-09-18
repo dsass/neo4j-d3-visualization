@@ -1,0 +1,24 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Graph Visualizations</title>
+    <script>
+        // Set the base URL for all relative paths
+        const isGitHubPages = window.location.hostname.endsWith('github.io');
+        document.write(`<base href="${isGitHubPages ? '/neo4j-d3-visualization/' : '/'}">`);
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Select a Knowledge Graph</h1>
+    <ul>
+        <li><a href="graph-viewer.html?graph=application">Application Graph</a></li>
+        <li><a href="graph-viewer.html?graph=metadata">Metadata Graph</a></li>
+        <li><a href="graph-viewer.html?graph=solution">Solution Graph</a></li>
+        <li><a href="local-viewer.html?file=solution">Solution Graph (from local file)</a></li>
+    </ul>
+</body>
+</html>

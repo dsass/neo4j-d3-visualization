@@ -1,0 +1,22 @@
+<!-- public/local-viewer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Graph Visualization</title>
+    <script>
+        // Set the base URL for all relative paths
+        const isGitHubPages = window.location.hostname.endsWith('github.io');
+        document.write(`<base href="${isGitHubPages ? '/neo4j-d3-visualization/' : '/'}">`);
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="graph-title">Local Knowledge Graph</h1>
+    <div id="graph-container"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="local-app.js"></script>
+</body>
+</html>
