@@ -10,13 +10,13 @@
         const isGitHubPages = window.location.hostname.endsWith('github.io');
         document.write(`<base href="${isGitHubPages ? '/neo4j-d3-visualization/public' : '/'}">`);
     </script> -->
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1 id="graph-title">Local Knowledge Graph</h1>
     <div id="graph-container"></div>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="public/local-app.js"></script>
+    <script src="local-app.js"></script>
 </body>
 </html>
